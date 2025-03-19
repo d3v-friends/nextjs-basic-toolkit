@@ -1,0 +1,30 @@
+$color-hover-background: #e0f3ff;
+
+@layer base {
+  .aside-submenu {
+    color: var(--light);
+
+    img {
+      filter: var(--light-filter);
+    }
+  }
+
+  .aside-submenu:hover {
+    //color: var(--dark);
+    background-color: #{$color-hover-background};
+
+    img {
+      //filter: var(--dark-filter);
+    }
+  }
+
+  .aside-submenu.active {
+    color: var(--purple);
+    font-weight: 600;
+    background-color: #{$color-hover-background};
+
+    img {
+      filter: var(--purple-filter);
+    }
+  }
+}

@@ -1,24 +1,30 @@
 {
   "name": "nextjs-basic-toolkit",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "source .env && PORT=$PORT NODE_OPTIONS='--inspect --enable-source-maps=true' next dev --turbopack",
+    "css": "tailwindcss -o ./asset/style/tailwind.css --watch",
+    "tag": "sh ./script/tag.sh $(jq \".version\" package.json | tr -d '\"')",
+    "export": "sh ./script/build.sh"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.3"
+    "next": "15.2.3",
+    "nextjs-tools": "github:d3v-friends/nextjs-tools#0.1.19",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "@tailwindcss/cli": "4.0.12",
+    "@types/node": "20.17.24",
+    "@types/react": "19.0.11",
+    "@types/react-dom": "19.0.4",
+    "prettier": "3.5.3",
+    "sass": "1.86.0",
+    "tailwindcss": "4.0.14",
+    "typescript": "5.8.2",
+    "tsc-alias": "1.8.11"
   }
 }
